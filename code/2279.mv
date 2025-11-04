@@ -1,0 +1,6 @@
+# echo - output all input characters
+A<I
+[0]<1
+B<[A]
+Z<B
+O<A

@@ -1,0 +1,22 @@
+# if else - compare two characters
+# Read two characters and output '1' if same, '0' if different
+
+A<I      # Read first character
+B<I      # Read second character
+
+# Use memory trick: write to memory at position A, then read at position B
+# If A == B, they access the same memory location
+[A]<1    # Write 1 to memory[A]
+C<[B]    # Read from memory[B]
+
+# C will be 1 if A == B (same location), 0 otherwise (uninitialized)
+
+# Create lookup table for output
+[0]<48   # memory[0] = '0' (ASCII 48)
+[1]<49   # memory[1] = '1' (ASCII 49)
+
+# Output based on C value
+O<[C]    # Output memory[C]
+
+Z<1      # Halt
+
